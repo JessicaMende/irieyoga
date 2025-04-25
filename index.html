@@ -1,1 +1,356 @@
-Hello world
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Irie Yoga</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="lotus.png" />
+    <style>
+      /* Modal Overlay */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .modal-overlay.active {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      /* Modal Box */
+      .modal {
+        background: #fff;
+        border-radius: 12px;
+        padding: 2rem;
+        width: 100%;
+        max-width: 600px;
+        position: relative;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* Close Button */
+      .modal-close {
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        font-size: 50px;
+        color: #666;
+        cursor: pointer;
+      }
+
+      .modal h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .modal p {
+        font-size: 1.5rem;
+        color: #444;
+      }
+
+      .modal img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 1rem 0;
+      }
+
+      .highlight {
+        color: #e67e22;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <!-- Modal -->
+    <div class="modal-overlay" id="yogaModal">
+      <div class="modal">
+        <span class="modal-close" id="closeModal">&times;</span>
+        <h2>🎉 無料体験セッション開催中！</h2>
+        <p>
+          <span class="highlight">Irie Yoga</span
+          >の人気インストラクターと一緒に、初めてのヨガ体験をしませんか？
+        </p>
+        <img src="images/pic03.jpg" alt="ヨガ講師の写真" />
+        <p>
+          心も身体もリラックスできる、やさしいレッスンです。今すぐご予約を！
+        </p>
+      </div>
+    </div>
+    <!-- Content -->
+    <div id="content">
+      <div class="inner">
+        <!-- Post -->
+        <article class="box post post-excerpt">
+          <header>
+            <h2><a href="#">ようこそ、Irie Yogaへ！</a></h2>
+            <p>長崎から全国へ。心と身体にやさしいヨガライフをご提案します。</p>
+          </header>
+          <div class="info">
+            <span class="date">
+              <span class="month">4<span>月</span></span>
+              <span class="day">23</span><span class="year">, 2025</span>
+            </span>
+
+            <ul class="stats">
+              <li><a href="#" class="icon fa-comment">16</a></li>
+              <li><a href="#" class="icon fa-heart">32</a></li>
+              <li><a href="#" class="icon brands fa-twitter">64</a></li>
+              <li><a href="#" class="icon brands fa-facebook-f">128</a></li>
+            </ul>
+          </div>
+          <a href="#" class="image featured">
+            <img src="images/pic01.jpg" alt="Irie Yoga クラス風景" />
+          </a>
+          <p>
+            <strong>こんにちは！</strong>
+            私たちは長崎を拠点に、全国に広がるヨガスタジオ
+            <strong>Irie Yoga</strong>
+            です。自然と調和しながら、自分らしさを大切にする時間を一緒に過ごしませんか？
+          </p>
+          <p>
+            初心者から上級者まで、誰でも楽しめるクラスが盛りだくさん！リラックスした空間で、心と身体を整えるヨガ体験を。全国のスタジオで、あなたの「本当の自分」に出会える場所を提供します。
+          </p>
+        </article>
+
+        <!-- Post -->
+        <article class="box post post-excerpt">
+          <header>
+            <h2><a href="#">毎日が変わる、ヨガとの出会い</a></h2>
+            <p>呼吸を整え、心をほどく。あなたの毎日に、小さな幸せを。</p>
+          </header>
+          <div class="info">
+            <span class="date">
+              <span class="month">4<span>月</span></span>
+              <span class="day">23</span><span class="year">, 2025</span>
+            </span>
+            <ul class="stats">
+              <li><a href="#" class="icon fa-comment">16</a></li>
+              <li><a href="#" class="icon fa-heart">32</a></li>
+              <li><a href="#" class="icon brands fa-twitter">64</a></li>
+              <li><a href="#" class="icon brands fa-facebook-f">128</a></li>
+            </ul>
+          </div>
+          <a href="#" class="image featured">
+            <img src="images/pic02.jpg" alt="ヨガレッスン風景" />
+          </a>
+          <p>
+            ゆっくりと呼吸しながらポーズをとることで、心と身体が自然にリセットされていく感覚。忙しい毎日から一歩離れて、自分と向き合う時間を過ごしてみませんか？
+          </p>
+          <p>
+            Irie
+            Yogaでは、全国のスタジオで初心者から経験者まで楽しめる多彩なクラスをご用意。少人数制のアットホームな雰囲気で、初めての方も安心して参加いただけます。
+          </p>
+        </article>
+
+        <article class="box post post-excerpt">
+          <header>
+            <h2><a href="#">ヨガで変わる、わたしの時間</a></h2>
+            <p>
+              深呼吸ひとつで、心が軽くなる。Irie
+              Yogaで“自分らしさ”を取り戻そう。
+            </p>
+          </header>
+          <div class="info">
+            <span class="date">
+              <span class="month">4<span>月</span></span>
+              <span class="day">23</span><span class="year">, 2025</span>
+            </span>
+            <ul class="stats">
+              <li><a href="#" class="icon fa-comment">16</a></li>
+              <li><a href="#" class="icon fa-heart">32</a></li>
+              <li><a href="#" class="icon brands fa-twitter">64</a></li>
+              <li><a href="#" class="icon brands fa-facebook-f">128</a></li>
+            </ul>
+          </div>
+          <a href="#" class="image featured">
+            <img src="images/pic03.jpg" alt="ヨガレッスン風景" />
+          </a>
+          <p>
+            ゆったりとした呼吸とともに、身体を解きほぐし、心を静かに整える時間。日常の喧騒を離れて、自分自身と向き合うひとときを体験しませんか？
+          </p>
+          <p>
+            Irie
+            Yogaでは、長崎をはじめ全国のスタジオで、初心者でも安心して参加できる温かいクラスを展開中。まずは気軽に、体験レッスンからどうぞ♪
+          </p>
+        </article>
+
+        <article class="box post post-excerpt">
+          <header>
+            <h2><a href="#">ストレスから解放される、癒しのひととき</a></h2>
+            <p>
+              忙しい毎日に、深い呼吸と静かな時間を。Irie
+              Yogaで心のバランスを取り戻しましょう。
+            </p>
+          </header>
+          <div class="info">
+            <span class="date">
+              <span class="month">4<span>月</span></span>
+              <span class="day">23</span><span class="year">, 2025</span>
+            </span>
+            <ul class="stats">
+              <li><a href="#" class="icon fa-comment">10</a></li>
+              <li><a href="#" class="icon fa-heart">45</a></li>
+              <li><a href="#" class="icon brands fa-twitter">73</a></li>
+              <li><a href="#" class="icon brands fa-facebook-f">102</a></li>
+            </ul>
+          </div>
+          <a href="#" class="image featured">
+            <img src="images/pic04.jpg" alt="瞑想する女性" />
+          </a>
+          <p>
+            現代のストレス社会で、心と身体の不調を感じていませんか？ヨガの呼吸法とやさしい動きは、緊張を和らげ、自然なバランスを取り戻す手助けをしてくれます。
+          </p>
+          <p>
+            Irie
+            Yogaのレッスンは、リラックスを目的とした「夜ヨガ」や、1日の始まりを整える「朝ヨガ」など、ライフスタイルに合わせたプログラムが充実。今日よりちょっと心地よい明日へ、一歩踏み出してみませんか？
+          </p>
+        </article>
+
+        <article class="box post post-excerpt">
+          <header>
+            <h2><a href="#">自然とつながる、呼吸の旅へ</a></h2>
+            <p>
+              木漏れ日の中で深呼吸。Irie
+              Yogaで始める、心と身体にやさしい暮らし。
+            </p>
+          </header>
+          <div class="info">
+            <span class="date">
+              <span class="month">4<span>月</span></span>
+              <span class="day">23</span><span class="year">, 2025</span>
+            </span>
+            <ul class="stats">
+              <li><a href="#" class="icon fa-comment">8</a></li>
+              <li><a href="#" class="icon fa-heart">50</a></li>
+              <li><a href="#" class="icon brands fa-twitter">71</a></li>
+              <li><a href="#" class="icon brands fa-facebook-f">110</a></li>
+            </ul>
+          </div>
+          <a href="#" class="image featured">
+            <img src="images/pic05.jpg" alt="自然の中でヨガをする女性" />
+          </a>
+          <p>
+            自然に囲まれた静かな環境でのヨガは、日常の慌ただしさから心を解放し、身体に本来のリズムを思い出させてくれます。風の音や鳥のさえずりを感じながら、今この瞬間を大切にするひととき。
+          </p>
+          <p>
+            Irie
+            Yogaでは、屋外イベントやリトリートも定期的に開催。自然と調和しながら、より深いリラクゼーションを体験できます。自分にやさしく、もっと自由に――ヨガとともに、心地よい毎日をはじめましょう。
+          </p>
+        </article>
+
+        <article class="box post post-excerpt">
+          <header>
+            <h2><a href="#">静かな時間に出会う場所</a></h2>
+            <p>思考を手放し、呼吸を感じる。Irie Yogaで、自分に戻る時間を。</p>
+          </header>
+          <div class="info">
+            <span class="date">
+              <span class="month">4<span>月</span></span>
+              <span class="day">23</span><span class="year">, 2025</span>
+            </span>
+            <ul class="stats">
+              <li><a href="#" class="icon fa-comment">12</a></li>
+              <li><a href="#" class="icon fa-heart">47</a></li>
+              <li><a href="#" class="icon brands fa-twitter">68</a></li>
+              <li><a href="#" class="icon brands fa-facebook-f">95</a></li>
+            </ul>
+          </div>
+          <a href="#" class="image featured">
+            <img src="images/pic06.jpg" alt="マインドフルなヨガの様子" />
+          </a>
+          <p>
+            日々の忙しさに追われて、自分の心の声を見失っていませんか？ヨガはただ身体を動かすだけでなく、静けさの中で自分自身と深くつながるための時間。答えは、いつも内側にあります。
+          </p>
+          <p>
+            Irie
+            Yogaでは、静寂と集中を大切にしたマインドフルネスヨガもご提供中。シンプルで丁寧な動きが、心の余白を広げてくれます。気づきと癒しに満ちた時間を、あなたに。
+          </p>
+        </article>
+      </div>
+
+      <section
+        id="access"
+        style="padding: 2rem; background-color: #f9f9f9; text-align: center"
+      >
+        <h2 style="font-size: 1.8rem; margin-bottom: 1rem">
+          📍 アクセス・お問い合わせ
+        </h2>
+        <p style="margin-bottom: 1.5rem">
+          Irie Yoga 長崎本店はこちら。お気軽にお問い合わせください。
+        </p>
+
+        <!-- Google Map Embed -->
+        <div style="max-width: 100%; overflow: hidden; margin-bottom: 2rem">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6702.30330784488!2d129.7848771935791!3d32.867706699999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356ab31374857d3b%3A0xa0d80262dd537861!2z44Ki44Kk44Oq44O844Oo44Ks44CQSVJJRS5ZT0dBLuOAkQ!5e0!3m2!1sen!2sde!4v1745443443461!5m2!1sen!2sde"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+
+        <!-- Contact Info -->
+        <p style="font-size: 1.1rem">
+          📞 お電話でのお問い合わせ：<a
+            href="tel:+819074602393"
+            style="color: #e67e22; text-decoration: none"
+            >+81 90 7460 2393</a
+          >
+        </p>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      // Show modal on page load
+      window.addEventListener("load", () => {
+        document.getElementById("yogaModal").classList.add("active");
+      });
+
+      // Close modal
+      document.body.addEventListener("click", () => {
+        document.getElementById("yogaModal").classList.remove("active");
+      });
+    </script>
+  </body>
+</html>
